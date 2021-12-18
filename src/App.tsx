@@ -30,6 +30,7 @@ function App() {
   }
 
   const handleClick = (): void => {
+    if (input === "") return
     fetch(`https://api.github.com/users/${input}`, {
       method: 'GET',
       headers: {
@@ -38,7 +39,10 @@ function App() {
     })
     .then(async response => {
       if (response.ok) {
+        setDisplay(true)
         return response.json()
+      } else {
+        setDisplay(false)
       }
       throw response
     })
@@ -54,7 +58,6 @@ function App() {
     .catch(err => {
       console.log("Fetch error: ", err)
     })
-    setDisplay(true)
     setInput("")
     console.log("data: ", data)
   }

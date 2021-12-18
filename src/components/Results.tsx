@@ -10,9 +10,9 @@ const Results: React.FC<IProps> = ({ data }) => {
             />
             <div className='card-info'>
                 <h1> {data.login} </h1>
-                <p>Name: {data.name} </p>
-                <p>Email: {data.email} </p>
-                <p>Bio: {data.bio} </p>
+                <p><strong>Name: </strong>{data.name} </p>
+                <p><strong>Email: </strong>{data.email} </p>
+                <p><strong>Bio: </strong>{data.bio} </p>
             </div>
         </div>
     )
